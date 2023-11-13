@@ -1,11 +1,11 @@
 #include "main.h"
 /**
-*	_print -  produces output according to a format.
+*	_printf -  produces output according to a format.
 *	@format: function parameter
 *	Return: 0 success, -1 failure
 */
 
-int _print(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	if (format == NULL)
 	return (-1);
