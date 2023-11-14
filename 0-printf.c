@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		_putchar(va_arg(args, int));
 		i++;
 	}
-	else if (format[i] == '%' && format[i + 1] == 's')
+	else if (format[i + 1] == 's')
 	{
 		scount = _putss(va_args(args, *char));
 		i++;
