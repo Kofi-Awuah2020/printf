@@ -6,6 +6,18 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+/**
+ * struct format -Struct format
+ *
+ * @specifier: The format specifier
+ * @fptrprint: The associated function
+ */
+typedef struct format
+{
+	char *specifier;
+	int (*fptrprint)(va_list);
+}format_spec;
+
 int _putchar(char c);
 int _putts(char *s)
 int _printf(const char *format, ...);
