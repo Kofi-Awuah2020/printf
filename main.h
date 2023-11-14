@@ -19,7 +19,7 @@ typedef struct format
 }format_spec;
 
 int _putchar(char c);
-int _putts(char *s)
+int _putts(char *s);
 int _printf(const char *format, ...);
 int print_char(va_list val);
 int print_str(va_list val);

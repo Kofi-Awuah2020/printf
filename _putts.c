@@ -2,7 +2,9 @@
 
 /**
  * _putts - function prints a string
+ * @s: String to be printed
  *
+ * Return: Counter variable
  */
 int _putts(char *s)
 {
