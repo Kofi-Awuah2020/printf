@@ -12,18 +12,10 @@
 
 	str = va_arg(val, char *);
 	if (str == NULL)
+		return (0);
 {
-	str = "(null)";
 	length = _strlen(str);
 	for (i = 0; i < length; i++)
 		_putchar(str[i]);
 	return (length);
-}
-	else
-	{
-	length = strlen(str);
-	for (i = 0; i < length; i++)
-		_putchar(str[i]);
-	return (length);
-	}
 }

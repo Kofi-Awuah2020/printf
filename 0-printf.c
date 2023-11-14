@@ -1,39 +1,40 @@
 #include "main.h"
 /**
 *	_printf -  produces output according to a format.
-*	@format: function parameter
-*	Return: 0 success, -1 failure
+*	@format:format specifier
+*	Return: number of bytes
 */
 
 int _printf(const char *format, ...)
 {
-	int char_print = 0;
+	unsigned int i, count = 0;
 	va_list args;
-
-	if (format == NULL)
-	return (-1);
 
 	va_start(args, format);
 
-	while (*format)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-	if (*format != '%' || (*(format + 1) == '%' && format++))
+	if (format[i]  != '%')
 	{
-		write(1, format, 1);
-		char_print++;
+		_putchar(format[i]);
 	}
-	else if (*format == 'c')
+	else if (format[i + 1] == 'c')
 	{
-		char c = va_arg(args, int);
-
-		write(1, &c, 1);
-		char_print++;
+		_putchar(va_arg(args, int));
+		i++;
 	}
-
-	format++;
+	else if (format[i + 1] == 's')
+	{
+		scount = _putss(va_args(args, *char));
+		i++;
+		count += (scount - 1);
 	}
-
+	else if (format[i + 1] == '%')
+	{
+		_putchar('%');
+	}
+		count += 1;
+	}
 	va_end(args);
-
-	return (char_print);
+	return (count);
 }
