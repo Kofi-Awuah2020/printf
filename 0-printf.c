@@ -7,7 +7,7 @@
 
 int _printf(const char *format, ...)
 {
-	unsigned int i, count = 0;
+	unsigned int i, scount, count = 0;
 	va_list args;
 
 	va_start(args, format);
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 	}
 	else if (format[i + 1] == 's')
 	{
-		scount = _putss(va_args(args, *char));
+		scount = _putts(va_arg(args, char *));
 		i++;
 		count += (scount - 1);
 	}
