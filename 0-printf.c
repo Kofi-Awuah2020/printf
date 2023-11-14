@@ -14,16 +14,16 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-	if (format[i]  != '%')
+	if (format[i] != '%')
 	{
 		_putchar(format[i]);
 	}
-	else if (format[i + 1] == 'c')
+	else if (format[i] == '%' && format[i + 1] == 'c')
 	{
 		_putchar(va_arg(args, int));
 		i++;
 	}
-	else if (format[i + 1] == 's')
+	else if (format[i] == '%' && format[i + 1] == 's')
 	{
 		scount = _putss(va_args(args, *char));
 		i++;
